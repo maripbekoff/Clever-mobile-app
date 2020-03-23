@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kazpost/models/send_message.dart';
+import 'package:kazpost/models/message.dart';
 import 'package:kazpost/pages/main/main.dart';
 import 'package:kazpost/pages/quiz/quiz.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

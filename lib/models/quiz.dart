@@ -5,6 +5,8 @@ import 'package:kazpost/db/database_helper.dart';
 import 'package:kazpost/pages/quiz/quiz.dart';
 import 'package:http/http.dart' as http;
 
+QuizModel quizModel = QuizModel();
+
 class QuizModel {
   Future getQuizzes() async {
     await Connection.checkConnection();
@@ -16,8 +18,7 @@ class QuizModel {
       await read.uid();
 
       String url = "$api/quizzes";
-      print(databaseHelper.accessToken);
-
+      
       try {
         if (databaseHelper.accessToken == null) {
           print('Обновите токен');

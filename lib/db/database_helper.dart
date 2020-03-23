@@ -15,8 +15,9 @@ Save save = Save();
 var courseList; // List of courses
 var course; // Content of course
 var files; // List of files
-var quizzes; // List of quizzes
 var quiz; // Conent of quiz
+var quizzes; // List of quizzes
+var quizStats; // Data of completed quizzes
 String qid; // Quiz's identification
 
 class DatabaseHelper {

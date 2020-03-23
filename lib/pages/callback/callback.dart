@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kazpost/bloc/connection.dart';
-import 'package:kazpost/models/send_message.dart';
+import 'package:kazpost/models/message.dart';
 
 class CallBackPage extends StatefulWidget {
   CallBackPage({Key key}) : super(key: key);

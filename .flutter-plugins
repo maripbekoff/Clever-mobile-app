@@ -1,0 +1,16 @@
+# This is a generated file; do not edit or check into version control.
+android_alarm_manager=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/android_alarm_manager-0.4.5+3/
+connectivity=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.8+1/
+connectivity_macos=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity_macos-0.1.0+1/
+flutter_local_notifications=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-1.1.5+1/
+flutter_pdfview=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_pdfview-1.0.1/
+path_provider=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.0/
+pdf_viewer_plugin=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/pdf_viewer_plugin-1.0.0+2/
+permission_handler=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-4.2.0+hotfix.3/
+shared_preferences=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.6+1/
+shared_preferences_macos=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+4/
+shared_preferences_web=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+3/
+sqflite=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.2.0/
+url_launcher=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/
+url_launcher_macos=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+2/
+url_launcher_web=/home/maripbekoff/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.0+2/

@@ -17,48 +17,16 @@ class FirstViewProfile extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Мониторинг",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF0157A5),
-                        ),
-                      ),
-                      Text(
-                        "Отлично",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF4CAF50),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "Курсы по мониторингу",
-                    style: TextStyle(fontSize: 17),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Ваш результат:",
-                        style: TextStyle(fontSize: 17),
-                      ),
-                      Text(
-                        "8/10",
-                        style: TextStyle(fontSize: 26),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              //
+              //
+              //
+              //
+              //
+              //
+              //
+              //
+              //
+              // Здесь крч заебашишь
             ),
           ),
         );
