@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:kazpost/db/database_helper.dart';
 
+final TextStyle _titleTextStyle = TextStyle(
+  fontSize: 14,
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+);
+final TextStyle _descriptionTextStyle = TextStyle(
+  fontSize: 12,
+  color: Colors.black54,
+);
+
 class SettingsPage extends StatefulWidget {
   SettingsPage({Key key}) : super(key: key);
 
@@ -72,20 +82,18 @@ class AccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle _titleTextStyle = TextStyle(
-      fontSize: 14,
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
-    );
-    final TextStyle _descriptionTextStyle = TextStyle(
-      fontSize: 12,
-      color: Colors.black54,
-    );
     return Card(
+      elevation: 4,
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          ListTile(
+            title: Text(
+              "Аккаунт",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
           ListTile(
             leading: Container(
               padding: EdgeInsets.all(10),
@@ -158,19 +166,18 @@ class AdditionalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle _titleTextStyle = TextStyle(
-      fontSize: 14,
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
-    );
-    final TextStyle _descriptionTextStyle = TextStyle(
-      fontSize: 12,
-      color: Colors.black54,
-    );
     return Card(
+      elevation: 4,
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          ListTile(
+            title: Text(
+              "Дополнительно",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
           ListTile(
             leading: Container(
               padding: EdgeInsets.all(10),
@@ -184,8 +191,8 @@ class AdditionalView extends StatelessWidget {
               ),
             ),
             title: Text("FAQ. Помощь", style: _titleTextStyle),
-            subtitle: Text("Ответы на самые частые вопросы",
-                style: _descriptionTextStyle),
+            subtitle:
+                Text("Ответы на частые вопросы", style: _descriptionTextStyle),
             trailing: IconButton(
               icon: Icon(Icons.arrow_forward_ios),
               onPressed: () {},

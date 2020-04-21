@@ -19,16 +19,18 @@ class HomePage extends StatefulWidget {
 }
 
 textStyle() {
-  return TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20);
+  return TextStyle(
+      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20);
 }
 
 titleStyle() {
-  return TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24);
+  return TextStyle(
+      color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24);
 }
 
 class _HomePageState extends State<HomePage> {
   String urlPDFPath = '';
-  
+
   QuizBloc quizBloc = QuizBloc();
 
   FilesModel filesModel = FilesModel();
@@ -79,7 +81,8 @@ class _HomePageState extends State<HomePage> {
                                 child: RaisedButton(
                                   onPressed: () {
                                     final snackBar = SnackBar(
-                                      content: Text('Произошла ошибка на стороне сервера'),
+                                      content: Text(
+                                          'Произошла ошибка на стороне сервера'),
                                       action: SnackBarAction(
                                         label: 'Ок',
                                         onPressed: () {},
@@ -93,7 +96,8 @@ class _HomePageState extends State<HomePage> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: Text('Не удалось загрузить последний тест'),
+                                  child: Text(
+                                      'Не удалось загрузить последний тест'),
                                 ),
                               );
                             } else {
@@ -124,7 +128,8 @@ class _HomePageState extends State<HomePage> {
                                           vertical: 18.5,
                                         ),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Text('Загрузка..'),
                                       ),
@@ -163,21 +168,27 @@ class _HomePageState extends State<HomePage> {
                                         color: Color(0xFFC83F3F),
                                         textColor: Colors.white,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             Icon(
                                               Icons.error_outline,
                                               size: 40,
                                             ),
                                             SizedBox(
-                                              width: MediaQuery.of(context).size.width / 35,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  35,
                                             ),
                                             Text(
                                               '${quizzes["quizzes"][quizzes["quizzes"].length - 1]["title"]}',
-                                              style: TextStyle(fontWeight: FontWeight.bold),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                           ],
                                         ),
@@ -234,8 +245,8 @@ class _HomePageState extends State<HomePage> {
                     childAspectRatio: 1.25,
                     crossAxisCount: 2,
                     children: <Widget>[
-                      CardWidget(
-                          "Мониторинг", 0xFF61D4B3, Icons.camera, 'assets/img/home_page/green.png'),
+                      CardWidget("Мониторинг", 0xFF61D4B3, Icons.camera,
+                          'assets/img/home_page/green.png'),
                       CardWidget("Учёт и аудит", 0xFFFDD365, Icons.category,
                           'assets/img/home_page/yellow.png'),
                       CardWidget("Call-менеджмент", 0xFFFB8D62, Icons.people,
@@ -253,7 +264,8 @@ class _HomePageState extends State<HomePage> {
             network
                 ? StreamBuilder(
                     stream: filesManager.filesList.asBroadcastStream(),
-                    builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
+                    builder:
+                        (BuildContext context, AsyncSnapshot<List> snapshot) {
                       if (snapshot.hasError) {
                         return Align(
                           alignment: Alignment.bottomCenter,
@@ -295,15 +307,25 @@ class _HomePageState extends State<HomePage> {
                                     Row(
                                       children: <Widget>[
                                         Container(
-                                          width: MediaQuery.of(context).size.width / 35,
-                                          height: MediaQuery.of(context).size.width / 35,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(360),
+                                            borderRadius:
+                                                BorderRadius.circular(360),
                                             color: Color(0xFFFFE500),
                                           ),
                                         ),
                                         SizedBox(
-                                          width: MediaQuery.of(context).size.width / 35,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
                                         ),
                                         Text(
                                           'Загруженные материалы',
@@ -325,11 +347,14 @@ class _HomePageState extends State<HomePage> {
                                         shrinkWrap: true,
                                         scrollDirection: Axis.vertical,
                                         physics: BouncingScrollPhysics(),
-                                        itemBuilder: (BuildContext context, int index) {
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
                                           return Container(
-                                            margin: const EdgeInsets.only(bottom: 20),
+                                            margin: const EdgeInsets.only(
+                                                bottom: 20),
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                               color: Color(0xFFE9E9E9),
                                             ),
                                             child: ListTile(
@@ -338,13 +363,16 @@ class _HomePageState extends State<HomePage> {
                                               title: Text(''),
                                               enabled: network,
                                               trailing: Container(
-                                                padding: const EdgeInsets.symmetric(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
                                                   vertical: 8,
                                                   horizontal: 56.5,
                                                 ),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
-                                                    borderRadius: BorderRadius.circular(15)),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15)),
                                                 child: Text(''),
                                               ),
                                             ),
@@ -373,15 +401,25 @@ class _HomePageState extends State<HomePage> {
                                     Row(
                                       children: <Widget>[
                                         Container(
-                                          width: MediaQuery.of(context).size.width / 35,
-                                          height: MediaQuery.of(context).size.width / 35,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(360),
+                                            borderRadius:
+                                                BorderRadius.circular(360),
                                             color: Color(0xFFFDD365),
                                           ),
                                         ),
                                         SizedBox(
-                                          width: MediaQuery.of(context).size.width / 35,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              35,
                                         ),
                                         Text(
                                           'Загруженные материалы',
@@ -399,19 +437,25 @@ class _HomePageState extends State<HomePage> {
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       physics: BouncingScrollPhysics(),
-                                      itemBuilder: (BuildContext context, int index) {
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
                                         return Container(
-                                          margin: const EdgeInsets.only(bottom: 20),
+                                          margin:
+                                              const EdgeInsets.only(bottom: 20),
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
                                             color: Color(0xFFE9E9E9),
                                           ),
                                           child: ListTile(
                                             enabled: network,
                                             onTap: () async {
                                               await filesModel
-                                                  .downloadFile(files["latestFiles"][index]["href"],
-                                                      files["latestFiles"][index]["filename"])
+                                                  .downloadFile(
+                                                      files["latestFiles"]
+                                                          [index]["href"],
+                                                      files["latestFiles"]
+                                                          [index]["filename"])
                                                   .then((f) {
                                                 setState(() {
                                                   print(urlPDFPath);
@@ -422,7 +466,8 @@ class _HomePageState extends State<HomePage> {
                                                 context,
                                                 CupertinoPageRoute(
                                                   builder: (context) =>
-                                                      MethodicsPage(href: urlPDFPath),
+                                                      MethodicsPage(
+                                                          href: urlPDFPath),
                                                 ),
                                               );
                                             },
@@ -430,7 +475,8 @@ class _HomePageState extends State<HomePage> {
                                               padding: const EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF7A92C2),
-                                                borderRadius: BorderRadius.circular(15),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
                                               ),
                                               child: Image.asset(
                                                 'assets/img/home_page/files/pdf.png',

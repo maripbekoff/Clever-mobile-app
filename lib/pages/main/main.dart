@@ -11,21 +11,21 @@ import 'package:kazpost/pages/callback/callback.dart';
 import 'package:kazpost/pages/courses/course_list.dart';
 import 'package:kazpost/pages/profile/profile.dart';
 import 'package:kazpost/pages/settings/settings.dart';
-import 'package:kazpost/pages/tests/test_list.dart';
 import 'package:kazpost/pages/tests/test.dart';
 
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     new FlutterLocalNotificationsPlugin();
 
 initialiseNotifications() async {
-  var initializationSettingsAndroid = new AndroidInitializationSettings('mipmap/kazpost');
-  var initializationSettingsIOS =
-      new IOSInitializationSettings(onDidReceiveLocalNotification: (i, string1, string2, string3) {
+  var initializationSettingsAndroid =
+      new AndroidInitializationSettings('mipmap/kazpost');
+  var initializationSettingsIOS = new IOSInitializationSettings(
+      onDidReceiveLocalNotification: (i, string1, string2, string3) {
     print("received notifications");
     return null;
   });
-  var initializationSettings =
-      new InitializationSettings(initializationSettingsAndroid, initializationSettingsIOS);
+  var initializationSettings = new InitializationSettings(
+      initializationSettingsAndroid, initializationSettingsIOS);
   await flutterLocalNotificationsPlugin.initialize(initializationSettings,
       onSelectNotification: (string) {
     print("selected notification");
@@ -63,8 +63,8 @@ pushNotifications() async {
           style: AndroidNotificationStyle.BigText,
         );
         var iOSPlatformChannelSpecifics = IOSNotificationDetails();
-        var platformChannelSpecifics =
-            NotificationDetails(androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+        var platformChannelSpecifics = NotificationDetails(
+            androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
         await flutterLocalNotificationsPlugin.show(
             0,
             quizzes["quizzes"][quizzes["quizzes"].length - 1]["title"],
@@ -94,7 +94,8 @@ pushNotifications() async {
 Future<void> initPlatformState() async {
   await initialiseNotifications();
 
-  await AndroidAlarmManager.periodic(const Duration(seconds: 30), 0, pushNotifications);
+  await AndroidAlarmManager.periodic(
+      const Duration(seconds: 30), 0, pushNotifications);
 }
 
 class MainPage extends StatefulWidget {
@@ -123,9 +124,9 @@ class _MainPageState extends State<MainPage> {
   }
 
   static List<Widget> _widgetOptions = <Widget>[
-    TestPageBar(),
-    HomePage(),
+    TestsScreen(),
     CallBackPage(),
+    HomePage(),
     SettingsPage(),
   ];
 
@@ -218,7 +219,7 @@ class _MainPageState extends State<MainPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => TestListPage()),
+                        MaterialPageRoute(builder: (context) => TestsScreen()),
                       );
                     },
                     child: Row(
@@ -255,8 +256,9 @@ class _MainPageState extends State<MainPage> {
             alignment: Alignment.bottomLeft,
             child: Container(
               padding: const EdgeInsets.all(5),
-              decoration:
-                  BoxDecoration(color: Color(0xFFEF5350), borderRadius: BorderRadius.circular(360)),
+              decoration: BoxDecoration(
+                  color: Color(0xFFEF5350),
+                  borderRadius: BorderRadius.circular(360)),
               child: IconButton(
                 highlightColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -287,7 +289,8 @@ class _MainPageState extends State<MainPage> {
       bottom: isCollapsed ? 0 : 0.1 * screenHeight,
       right: isCollapsed ? 0 : -0.4 * screenWidth,
       child: ClipRRect(
-        borderRadius: isCollapsed ? BorderRadius.circular(0) : BorderRadius.circular(30),
+        borderRadius:
+            isCollapsed ? BorderRadius.circular(0) : BorderRadius.circular(30),
         child: AnimatedOpacity(
           duration: _duration,
           opacity: isCollapsed ? 1 : 0.5,
@@ -332,13 +335,17 @@ class _MainPageState extends State<MainPage> {
               showUnselectedLabels: false,
               selectedLabelStyle: TextStyle(fontSize: 0),
               items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(icon: Icon(Icons.bookmark), title: Text('')),
-                BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('')),
-                BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('')),
-                BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('')),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), title: Text('')),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.mode_edit), title: Text('')),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home), title: Text('')),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.settings), title: Text('')),
               ],
               currentIndex: _selectedIndex,
-              selectedItemColor: Color(0xFF0157A5),
+              selectedItemColor: Colors.black,
               onTap: _onItemTapped,
             ),
           ),
